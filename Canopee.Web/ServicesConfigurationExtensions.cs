@@ -1,4 +1,6 @@
-﻿namespace Canopee
+﻿using Serilog;
+
+namespace Canopee.Web
 {
     public static class ServicesConfigurationExtensions
     {
@@ -17,6 +19,15 @@
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+        }
+
+        public static void ConfigureLogger(this WebApplicationBuilder builder)
+        {
+            builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
+            {
+                loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
+            });
+            builder.Services.AddScoped<Common.ILogger, Logger.SeriLog.Logger>();
         }
     }
 }
