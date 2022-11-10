@@ -6,8 +6,6 @@ namespace Canopee.Logger.SeriLog
 {
     public class Logger : ILogger
     {
-
-
         public void LogDebug(string message) => Log.Information(message);
 
         public void LogError(string message) => Log.Error(message);

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Configure();
+builder.Services.ConfigureWebApplication();
 builder.ConfigureLogger();
 
 var app = builder.Build();

@@ -1,4 +1,8 @@
-﻿using Serilog;
+﻿using Canopee.Persistence;
+
+using Microsoft.EntityFrameworkCore;
+
+using Serilog;
 
 namespace Canopee.Web
 {
@@ -13,7 +17,7 @@ namespace Canopee.Web
             });
         }
 
-        public static void Configure(this IServiceCollection services)
+        public static void ConfigureWebApplication(this IServiceCollection services)
         {
             services.ConfigureCors();
             services.AddControllers();
@@ -29,5 +33,7 @@ namespace Canopee.Web
             });
             builder.Services.AddScoped<Common.ILogger, Logger.SeriLog.Logger>();
         }
+
+        public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) => services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
     }
 }
