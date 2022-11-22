@@ -1,3 +1,5 @@
+using Canopee.Application;
+using Canopee.Persistence;
 using Canopee.Web;
 
 using Microsoft.AspNetCore.HttpOverrides;
@@ -5,6 +7,11 @@ using Microsoft.AspNetCore.HttpOverrides;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureWebApplication();
+builder.Services.ConfigureSqlContext(builder.Configuration);
+builder.Services.AddScoped<ITreeService, TreeService>();
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
+builder.Services.AddAutoMapper(typeof(Program));
+
 builder.ConfigureLogger();
 
 var app = builder.Build();

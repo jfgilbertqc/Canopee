@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Canopee.Web.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20221109205158_UpdatedTreeDataModel")]
-    partial class UpdatedTreeDataModel
+    [Migration("20221119194542_FirstModel")]
+    partial class FirstModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,7 +67,7 @@ namespace Canopee.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Trees");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,6 +14,6 @@ namespace Canopee.Persistence
             modelBuilder.ApplyConfiguration(new TreeConfiguration());
         }
 
-        public DbSet<Tree>? Companies { get; set; }
+        public DbSet<Tree>? Trees { get; set; }
     }
 }

@@ -64,7 +64,7 @@ namespace Canopee.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Trees");
                 });
 #pragma warning restore 612, 618
         }

@@ -9,9 +9,11 @@ namespace Canopee.Persistence
 
         public IList<Tree> GetTrees()
         {
-            return new List<Tree>();
+            return FindAll(false).OrderBy(x => x.NameFr).ToList();
         }
-
-
+        public void Add(Tree tree)
+        {
+            Create(tree);
+        }
     }
 }
