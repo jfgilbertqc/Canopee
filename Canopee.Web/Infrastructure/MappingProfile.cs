@@ -11,10 +11,9 @@ namespace Canopee.Web.Infrastructure
     {
         public MappingProfile()
         {
-            CreateMap<Tree, TreeDto>().ForMember(t => t.HardinessZone, opt => opt.MapFrom(x => x != null ? GetHardinessFromNumber(x.HardinessZone) : TreeEnums.HardinessZone.OneA));
-            CreateMap<AddTreeDto, Tree>().ForMember(x => x.Id, opt => opt.Ignore()).ForMember(x => x.HardinessZone, opt => opt.MapFrom(src => GetHardinessFromEnum(src.HardinessZone)));
+            CreateMap<Tree, TreeDto>().ForMember(t => t.HardinessZone, opt => opt.MapFrom(x => x != null ? GetEnumDescription(x.HardinessZone) : ""));
+            CreateMap<AddTreeDto, Tree>();
+            CreateMap<UpdateTreeDto, Tree>();
         }
-
-
     }
 }

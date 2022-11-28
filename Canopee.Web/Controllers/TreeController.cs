@@ -49,5 +49,12 @@ namespace Canopee.Web.Controllers
             var createdTree = _treeService.AddTree(tree);
             return CreatedAtRoute("GetTreeById", new { id = createdTree.Id }, createdTree);
         }
+
+        [HttpPut]
+        public IActionResult UpdateTree(UpdateTreeDto tree)
+        {
+            _treeService.UpdateTree(tree);
+            return Ok();
+        }
     }
 }

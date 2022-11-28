@@ -8,7 +8,7 @@ namespace Canopee.Common.DataTransferObjects
         public string? NameFr { get; set; }
         public string? NameEn { get; set; }
         public string? NameLa { get; set; }
-        public HardinessZone HardinessZone { get; set; }
+        public string? HardinessZone { get; set; }
         public Exposition Exposition { get; set; }
         public GrowthSpeed Growth { get; set; }
         public DiseaseRisk Disease { get; set; }

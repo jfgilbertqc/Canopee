@@ -17,20 +17,6 @@ namespace Canopee.Application
             _mapper = mapper;
         }
 
-        public TreeDto AddTree(AddTreeDto tree)
-        {
-            var mappedTree = _mapper.Map<Tree>(tree);
-            _repositoryManager.TreeRepository.Add(mappedTree);
-            _repositoryManager.Save();
-            return _mapper.Map<TreeDto>(mappedTree);
-        }
-
-        public void Delete(int id)
-        {
-            _repositoryManager.TreeRepository.Delete(id);
-            _repositoryManager.Save();
-        }
-
         public TreeDto GetTree(int id)
         {
             var tree = _repositoryManager.TreeRepository.GetTree(id);
@@ -41,6 +27,27 @@ namespace Canopee.Application
         {
             var trees = _repositoryManager.TreeRepository.GetTrees();
             return _mapper.Map<IList<TreeDto>>(trees);
+        }
+
+        public TreeDto AddTree(AddTreeDto tree)
+        {
+            var mappedTree = _mapper.Map<Tree>(tree);
+            _repositoryManager.TreeRepository.Add(mappedTree);
+            _repositoryManager.Save();
+            return _mapper.Map<TreeDto>(mappedTree);
+        }
+
+        public void UpdateTree(UpdateTreeDto tree)
+        {
+            var mappedTree = _mapper.Map<Tree>(tree);
+            _repositoryManager.TreeRepository.Update(mappedTree);
+            _repositoryManager.Save();
+        }
+
+        public void Delete(int id)
+        {
+            _repositoryManager.TreeRepository.Delete(id);
+            _repositoryManager.Save();
         }
     }
 }

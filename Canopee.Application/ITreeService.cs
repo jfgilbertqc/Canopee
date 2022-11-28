@@ -8,5 +8,6 @@ namespace Canopee.Application
         public TreeDto AddTree(AddTreeDto tree);
         TreeDto GetTree(int id);
         void Delete(int id);
+        void UpdateTree(UpdateTreeDto tree);
     }
 }
