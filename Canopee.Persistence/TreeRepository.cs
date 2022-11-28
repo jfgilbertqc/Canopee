@@ -15,5 +15,10 @@ namespace Canopee.Persistence
         {
             Create(tree);
         }
+
+        public Tree GetTree(int id)
+        {
+            return FindByCondition(x => x.Id == id, false).SingleOrDefault();
+        }
     }
 }

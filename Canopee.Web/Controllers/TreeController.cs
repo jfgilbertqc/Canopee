@@ -24,7 +24,8 @@ namespace Canopee.Web.Controllers
         [HttpGet("{id:int}", Name = "GetTreeById")]
         public IActionResult GetTreeById(int id)
         {
-            return Ok();
+            var tree = _treeService.GetTree(id);
+            return tree != null ? Ok(tree) : NotFound();
         }
 
         [HttpPost]

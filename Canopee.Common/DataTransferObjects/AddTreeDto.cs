@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-using static Canopee.Common.DataTransferObjects.TreeDto;
+using static Canopee.Common.DataTransferObjects.TreeEnums;
 
 namespace Canopee.Common.DataTransferObjects
 {
@@ -16,8 +16,8 @@ namespace Canopee.Common.DataTransferObjects
         public string? NameLa { get; set; }
         [Required]
         [HardinessZoneValidationAttribute]
-        public string? HardinessZone { get; set; }
-        public PlantExposition Exposition { get; set; } = PlantExposition.All;
+        public HardinessZone HardinessZone { get; set; }
+        public Exposition Exposition { get; set; } = Exposition.All;
         public GrowthSpeed Growth { get; set; } = GrowthSpeed.Average;
         public DiseaseRisk Disease { get; set; } = DiseaseRisk.Average;
         public InsectsRisk Insects { get; set; } = InsectsRisk.Average;

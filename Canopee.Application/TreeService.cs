@@ -25,6 +25,12 @@ namespace Canopee.Application
             return _mapper.Map<TreeDto>(mappedTree);
         }
 
+        public TreeDto GetTree(int id)
+        {
+            var tree = _repositoryManager.TreeRepository.GetTree(id);
+            return tree != null ? _mapper.Map<Tree, TreeDto>(tree) : null;
+        }
+
         public IList<TreeDto> GetTrees()
         {
             var trees = _repositoryManager.TreeRepository.GetTrees();

@@ -13,7 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canopee.Domain", "Canopee.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canopee.Persistence", "Canopee.Persistence\Canopee.Persistence.csproj", "{69E41FF6-86AB-4EF1-B039-D8914BA351B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canopee.Application", "Canopee.Application\Canopee.Application.csproj", "{9325AF15-384A-47EF-84B0-FC35C4AABF9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canopee.Application", "Canopee.Application\Canopee.Application.csproj", "{9325AF15-384A-47EF-84B0-FC35C4AABF9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canopee.Common.Test", "Canopee.Common.Test\Canopee.Common.Test.csproj", "{BC7CFEBA-B9F0-49D7-AA21-DA1BAF72AB8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{09B29DCF-D549-48B1-8DDC-413A0C21CCDE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +52,10 @@ Global
 		{9325AF15-384A-47EF-84B0-FC35C4AABF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9325AF15-384A-47EF-84B0-FC35C4AABF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9325AF15-384A-47EF-84B0-FC35C4AABF9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7CFEBA-B9F0-49D7-AA21-DA1BAF72AB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7CFEBA-B9F0-49D7-AA21-DA1BAF72AB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7CFEBA-B9F0-49D7-AA21-DA1BAF72AB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7CFEBA-B9F0-49D7-AA21-DA1BAF72AB8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

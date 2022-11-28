@@ -1,4 +1,4 @@
-﻿using static Canopee.Common.DataTransferObjects.TreeDto;
+﻿using static Canopee.Common.DataTransferObjects.TreeEnums;
 
 namespace Canopee.Domain.Entities
 {
@@ -9,7 +9,7 @@ namespace Canopee.Domain.Entities
         public string? NameEn { get; set; }
         public string? NameLa { get; set; }
         public float HardinessZone { get; set; }
-        public PlantExposition Exposition { get; set; }
+        public Exposition Exposition { get; set; }
         public GrowthSpeed Growth { get; set; }
         public DiseaseRisk Disease { get; set; }
         public InsectsRisk Insects { get; set; }
