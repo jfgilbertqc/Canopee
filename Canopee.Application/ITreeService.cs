@@ -7,5 +7,6 @@ namespace Canopee.Application
         public IList<TreeDto> GetTrees();
         public TreeDto AddTree(AddTreeDto tree);
         TreeDto GetTree(int id);
+        void Delete(int id);
     }
 }

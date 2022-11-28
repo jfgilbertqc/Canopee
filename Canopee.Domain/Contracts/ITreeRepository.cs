@@ -7,5 +7,7 @@ namespace Canopee.Domain.Contracts
         public IList<Tree> GetTrees();
         public void Add(Tree tree);
         Tree GetTree(int id);
+        public void Delete(int id);
+
     }
 }

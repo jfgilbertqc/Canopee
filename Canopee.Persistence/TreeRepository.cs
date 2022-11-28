@@ -1,5 +1,6 @@
 ﻿using Canopee.Domain.Contracts;
 using Canopee.Domain.Entities;
+using Canopee.Domain.Exceptions;
 
 namespace Canopee.Persistence
 {
@@ -19,6 +20,19 @@ namespace Canopee.Persistence
         public Tree GetTree(int id)
         {
             return FindByCondition(x => x.Id == id, false).SingleOrDefault();
+        }
+
+        public void Delete(int id)
+        {
+            var tree = GetTree(id);
+            if (tree != null)
+            {
+                Delete(GetTree(id));
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
     }
 }

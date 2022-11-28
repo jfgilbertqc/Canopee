@@ -1,5 +1,6 @@
 ﻿using Canopee.Application;
 using Canopee.Common.DataTransferObjects;
+using Canopee.Domain.Exceptions;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,6 +27,20 @@ namespace Canopee.Web.Controllers
         {
             var tree = _treeService.GetTree(id);
             return tree != null ? Ok(tree) : NotFound();
+        }
+
+        [HttpDelete("{id:int}", Name = "Delete")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _treeService.Delete(id);
+                return NoContent();
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound();
+            }
         }
 
         [HttpPost]
